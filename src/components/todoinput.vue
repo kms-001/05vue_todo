@@ -21,8 +21,8 @@ export default {
         addTodo(){
             console.log(this.newTodoItem);
             let value = this.newTodoItem;
-            localStorage.setItem(value,value);
-            //this.$emit('addTodo',value);
+            //localStorage.setItem(value,value);
+            this.$emit('addTodo',value);
             this.clearInput();
         },
         clearInput(){
