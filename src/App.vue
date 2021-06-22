@@ -1,30 +1,39 @@
 <template>
-  <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </div>
-  <router-view/>
+  <todoheader> </todoheader>
+  <todoinput/>
+  <todolist/>
+  <todofooter/>
 </template>
 
-<style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-
-#nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
+<script>
+import todoheader from './components/todoheader.vue'
+import todoinput from './components/todoinput.vue'
+import todolist from './components/todolist.vue'
+import todofooter from './components/todofooter.vue'
+export default {
+    name:'app',
+    components:{
+      todoheader,
+      todoinput,
+      todolist,
+      todofooter,
     }
-  }
 }
+</script>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+body {font-family: 'Roboto', sans-serif;
+      background:#f6f6f8; text-align: center;}
+
+*{margin: 0; padding: 0;}
+a:link,a:visited {text-decoration: none; color:#333}
+.clearfix:after {content:""; display: block; clear:both}
+li{list-style:none;}
+
+#app {padding:0 20px;}
+
+input {border-style:groove; width: 70%}
+botton {border-style: groove;}
+.shadow{box-shadow: 5px 10px 10px rgba(0,0,0,0.03);}
 </style>
